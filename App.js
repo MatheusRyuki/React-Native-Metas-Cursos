@@ -15,8 +15,10 @@ export default function App() {
     setModalIsVisible(false);
   };
 
-  const deleteGoalHandler = () => {
-    console.log("DELETE");
+  const deleteGoalHandler = (id) => {
+    setCourseGoals((currentCourseGoals) => {
+      return currentCourseGoals.filter((goal) => goal.key !== id);
+    });
   };
 
   const addGoalHandler = (enteredGoalText) => {
@@ -38,6 +40,7 @@ export default function App() {
             return (
               <GoalItem
                 text={item.item.text}
+                id={item.item.key}
                 onDeleteItem={deleteGoalHandler}
               />
             );
