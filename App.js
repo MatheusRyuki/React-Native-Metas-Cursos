@@ -36,7 +36,11 @@ export default function App() {
         color="#5e0acc"
         onPress={startAddGoalHandler}
       />
-      <GoalInput onAddGoal={addGoalHandler} visible={modalisVisible} />
+      <GoalInput
+        onAddGoal={addGoalHandler}
+        visible={modalisVisible}
+        onCancel={endAddGoalHandler}
+      />
       <View style={styles.goalsContainer}>
         <FlatList
           data={courseGoals}
