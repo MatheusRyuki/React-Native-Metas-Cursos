@@ -31,7 +31,12 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-      <GoalInput onAddGoal={addGoalHandler} />
+      <Button
+        title="Adicionar novo Meta"
+        color="#5e0acc"
+        onPress={startAddGoalHandler}
+      />
+      <GoalInput onAddGoal={addGoalHandler} visible={modalisVisible} />
       <View style={styles.goalsContainer}>
         <FlatList
           data={courseGoals}
