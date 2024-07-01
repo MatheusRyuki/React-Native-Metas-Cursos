@@ -15,6 +15,10 @@ export default function App() {
     setModalIsVisible(false);
   };
 
+  const deleteGoalHandler = () => {
+    console.log("DELETE");
+  };
+
   const addGoalHandler = (enteredGoalText) => {
     setCourseGoals((currentCourseGoals) => [
       ...currentCourseGoals,
@@ -31,7 +35,12 @@ export default function App() {
           data={courseGoals}
           alwaysBounceVertical={false}
           renderItem={(item) => {
-            return <GoalItem text={item.item.text} />;
+            return (
+              <GoalItem
+                text={item.item.text}
+                onDeleteItem={deleteGoalHandler}
+              />
+            );
           }}
         />
       </View>
